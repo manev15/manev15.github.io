@@ -37,9 +37,28 @@
 
   return icsFile;
 }
+    function createICSFile() {
+            var icsContent = "BEGIN:VCALENDAR\n" +
+                "VERSION:2.0\n" +
+                "BEGIN:VEVENT\n" +
+                "SUMMARY:Discuss project progress\n" +
+                "DTSTART:20230527T080000Z\n" +
+                "DTEND:20230527T090000Z\n" +
+                "END:VEVENT\n" +
+                "END:VCALENDAR\n";
+
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent));
+            element.setAttribute('download', 'event.ics');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
 </script>
 </head>
-<body onload="makeIcsFile();">
+<body onload="createICSFile();">
 
 <a href="https://gulli.travel/?m=AusSyd_1&s=nfc-test-sydney-2" id="xyz">Link </a>
 </body>
