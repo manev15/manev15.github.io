@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<html>
 <head>
-<script>
-     function makeIcsFile(summary, description) {
+  <script type="text/javascript">
+     function makeIcsFile() {
   var test =
     "BEGIN:VCALENDAR\n" +
     "CALSCALE:GREGORIAN\n" +
@@ -16,10 +17,10 @@
     "DTEND;VALUE=DATE:20200229T190000z
 " +    "\n" +
     "SUMMARY:" +
-    summary +
+    "summary" +
     "\n" +
     "DESCRIPTION:" +
-    description +
+    "description" +
     "\n" +
     "END:VEVENT\n" +
     "END:VCALENDAR";
@@ -42,3 +43,5 @@
 
 <a href="https://gulli.travel/?m=AusSyd_1&s=nfc-test-sydney-2" id="xyz">Link </a>
 </body>
+     
+</html>
