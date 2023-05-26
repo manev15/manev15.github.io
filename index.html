@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create iCalendar File</title>
+    <title>Add Event to Calendar</title>
     <script>
-        function createICSFile() {
+        function addToCalendar() {
             var icsContent = "BEGIN:VCALENDAR\n" +
                 "VERSION:2.0\n" +
                 "BEGIN:VEVENT\n" +
@@ -13,17 +13,13 @@
                 "END:VEVENT\n" +
                 "END:VCALENDAR\n";
 
-            var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent));
-            element.setAttribute('download', 'event.ics');
-            element.style.display = 'none';
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
+            var encodedContent = encodeURIComponent(icsContent);
+            var url = 'data:text/calendar;charset=utf-8,' + encodedContent;
+            window.location.href = url;
         }
     </script>
 </head>
-<body>
-    <button onclick="createICSFile()">Download iCalendar File</button>
+<body onload="addToCalendar()">
+    <h1>Adding Event to Calendar...</h1>
 </body>
 </html>
