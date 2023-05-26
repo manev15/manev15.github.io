@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script
-    function createICSFile() {
+    <title>Create iCalendar File</title>
+    <script>
+        function createICSFile() {
             var icsContent = "BEGIN:VCALENDAR\n" +
                 "VERSION:2.0\n" +
                 "BEGIN:VEVENT\n" +
@@ -20,12 +21,9 @@
             element.click();
             document.body.removeChild(element);
         }
-
-</script>
+    </script>
 </head>
-<body onload="createICSFile();">
-
-<a href="https://gulli.travel/?m=AusSyd_1&s=nfc-test-sydney-2" id="xyz">Link </a>
+<body>
+    <button onclick="createICSFile()">Download iCalendar File</button>
 </body>
-     
 </html>
