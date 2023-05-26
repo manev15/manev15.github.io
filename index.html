@@ -15,11 +15,15 @@
 
             var encodedContent = encodeURIComponent(icsContent);
             var url = 'data:text/calendar;charset=utf-8,' + encodedContent;
-            window.location.href = url;
+            var link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'event.ics');
+            link.innerHTML = 'Click here to download the iCalendar file.';
+            document.body.appendChild(link);
         }
     </script>
 </head>
 <body onload="addToCalendar()">
-    <h1>Adding Event to Calendar...</h1>
+    <h1>Adding Event to Calendar v2 ace...</h1>
 </body>
 </html>
