@@ -32,7 +32,7 @@
            var icsContent = "BEGIN:VCALENDAR\n" +
                 "VERSION:2.0\n" +
                 "BEGIN:VEVENT\n" +
-                "SUMMARY:"+getParameterValue('note')+"\n" +
+                "SUMMARY:"+getParameterValue('title')+"\n" +
                 "DTSTART:"+getParameterValue('start')+"\n" +
                 "DTEND:"+getParameterValue('end')+"\n" +
                 "END:VEVENT\n" +
@@ -44,7 +44,7 @@
 	}
 	
 	function getParameterValue(parameterName) {
-  const urlSearchParams = new URLSearchParams(window.location.href);
+  const urlSearchParams = new URLSearchParams(window.location.search);
   return urlSearchParams.get(parameterName);
 }
   </script>
