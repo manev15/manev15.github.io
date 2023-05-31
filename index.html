@@ -31,12 +31,16 @@
 	function addToCalendar(){
 	
 
-	const table = document.getElementById('appointment-table');
-    const row = table.insertRow();
-    row.insertCell().textContent = getParameterValue('title') || '';
-    row.insertCell().textContent = getParameterValue('start') || '';
-    row.insertCell().textContent = getParameterValue('end') || '';
-    row.insertCell().textContent = getParameterValue('note') || '';
+	//const table = document.getElementById('appointment-table');
+   // const row = table.insertRow();
+  //  row.insertCell().textContent = getParameterValue('title') || '';
+  //  row.insertCell().textContent = getParameterValue('start') || '';
+  //  row.insertCell().textContent = getParameterValue('end') || '';
+   // row.insertCell().textContent = getParameterValue('note') || '';
+       document.getElementById('title').textContent =  getParameterValue('title') || '';
+    document.getElementById('startTime').textContent =  getParameterValue('start') || '';
+    document.getElementById('endTime').textContent =  getParameterValue('end') || '';
+    document.getElementById('description').textContent =  getParameterValue('note') || '';
 	
            var icsContent = "BEGIN:VCALENDAR\n" +
                 "VERSION:2.0\n" +
@@ -68,19 +72,20 @@
         color:#595959;
         text-decoration: underline;
     }
-	 table {
-      border-collapse: collapse;
-      width: 100%;
+	 .appointment-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
+    .appointment-card h2 {
+      margin: 0;
     }
 
-    th {
-      background-color: #f2f2f2;
+    .appointment-card p {
+      margin: 10px 0;
     }
 </style>
 
@@ -90,14 +95,13 @@
 		<div class="row justify-content-center">
 		<h1>Детали за терминот:</h1>
 
-  <table id="appointment-table">
-    <tr>
-      <th>Title</th>
-      <th>Start Time</th>
-      <th>End Time</th>
-      <th>Description</th>
-    </tr>
-  </table>
+ <div class="appointment-card">
+    <h2>Appointment Details</h2>
+    <p><strong>Title:</strong> <span id="title"></span></p>
+    <p><strong>Start Time:</strong> <span id="startTime"></span></p>
+    <p><strong>End Time:</strong> <span id="endTime"></span></p>
+    <p><strong>Description:</strong> <span id="description"></span></p>
+  </div>
 		
 		</div>
 		
