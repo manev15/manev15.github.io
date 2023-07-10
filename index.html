@@ -24,7 +24,8 @@
     <script>
     var userAgent = navigator.userAgent.toLowerCase();
    if (userAgent.indexOf("android") > -1) {
-     window.location.href = "https://play.google.com/store/apps/details?id=com.echo.genie&&referrer=aid%3DRsfABcsF4Q4GhEcCCB9g";
+     const aid = getParameterValue("aid");
+     window.location.href = "https://play.google.com/store/apps/details?id=com.echo.genie&&referrer=aid%3D${aid}";
     }
 	
 	
