@@ -23,21 +23,13 @@
     </style>
     <script>
     var userAgent = navigator.userAgent.toLowerCase();
-    //if (userAgent.indexOf("android") > -1) {
-     // window.location.href = "https://play.google.com/store/apps/details?id=com.echo.lactalis";
-   // }
+   if (userAgent.indexOf("android") > -1) {
+     window.location.href = "https://play.google.com/store/apps/details?id=com.echo.genie&&referrer=aid%3DRsfABcsF4Q4GhEcCCB9g";
+    }
 	
 	
 	function addToCalendar(){
-	
-
-	//const table = document.getElementById('appointment-table');
-   // const row = table.insertRow();
-  //  row.insertCell().textContent = getParameterValue('title') || '';
-  //  row.insertCell().textContent = getParameterValue('start') || '';
-  //  row.insertCell().textContent = getParameterValue('end') || '';
-   // row.insertCell().textContent = getParameterValue('note') || '';
-       document.getElementById('title').textContent =  getParameterValue('type') || '';
+    document.getElementById('title').textContent =  getParameterValue('type') || '';
     document.getElementById('startTime').textContent =  convertToCustomDateFormatVisible(getParameterValue('start_time')) || '';
     document.getElementById('endTime').textContent =  convertToCustomDateFormatVisible(getParameterValue('end_time')) || '';
 	
@@ -45,8 +37,8 @@
                 "VERSION:2.0\n" +
                 "BEGIN:VEVENT\n" +
                 "SUMMARY:"+getParameterValue('type')+"\n" +
-                "DTSTART:"+convertToCustomDateFormat(getParameterValue('start_time'))+"\n" +
-                "DTEND:"+convertToCustomDateFormat(getParameterValue('end_time'))+"\n" +
+                "DTSTART:"+convertToCustomDateFormatVisible(getParameterValue('start_time'))+"\n" +
+                "DTEND:"+convertToCustomDateFormatVisible(getParameterValue('end_time'))+"\n" +
                 "END:VEVENT\n" +
                 "END:VCALENDAR\n";
 
@@ -108,6 +100,7 @@ function convertToCustomDateFormat(timestamp) {
       border: 1px solid #ddd;
       padding: 20px;
       margin-bottom: 20px;
+	  margin-top: 50px;
     }
 
     .appointment-card h2 {
